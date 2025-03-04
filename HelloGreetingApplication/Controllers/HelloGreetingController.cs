@@ -30,14 +30,37 @@ namespace HelloGreetingApplication.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var response = _greetingBL.getGreetMessage();
+           
             ResponseModel<String> responseModel = new ResponseModel<string>();
 
             responseModel.Success = true;
             responseModel.Message = "API Endpoint Hit";
-            responseModel.Data = response;
+            responseModel.Data = "Hello, World!";
             _logger.Info("Get Method Executed");
             return Ok(responseModel);
+        }
+
+
+
+        /// <summary>
+        /// Post method to accept a custom greeting message
+        /// </summary>
+        /// <param name="userModel">Greeting message from user</param>
+        /// <returns>Confirmation response</returns>
+        [HttpPost("greet")]
+        public IActionResult Post(UserModel userModel)
+        {
+
+            var response = _greetingBL.getGreetMessage(userModel);
+            ResponseModel<String> responseModel = new ResponseModel<string>();
+
+            responseModel.Success = true;
+            responseModel.Message = "API Endpoint Hit";
+            responseModel.Data =response;
+            _logger.Info("Post Method Executed");
+            return Ok(responseModel);
+
+
         }
 
         /// <summary>
@@ -108,12 +131,6 @@ namespace HelloGreetingApplication.Controllers
             responseModel.Data = null ;
             _logger.Info("Detele Method Executed");
             return Ok(responseModel);
-        }
-
-        [HttpGet("greet")]
-        public string get()
-        {
-           return _greetingBL.getGreetMessage();
         }
     }
 }

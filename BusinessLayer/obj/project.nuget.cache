@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QNB5GO/CXY8=",
+  "dgSpecHash": "G7XYq37PSSc=",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\OneDrive\\Desktop\\GreetingApp\\BusinessLayer\\BusinessLayer.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interface;
+using ModelLayer.Model;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,9 @@ namespace BusinessLayer.Service
             _greetingRL = greetingRL;
         }
 
-        public string getGreetMessage()
+        public string getGreetMessage(UserModel userModel)
         {
-            var result = _greetingRL.getGreetMessage();
+            var result = _greetingRL.getGreetMessage(userModel);
             return result;
         }
     }
