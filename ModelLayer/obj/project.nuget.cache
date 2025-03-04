@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "HSrG2MOHKQs=",
+  "dgSpecHash": "Z6eFCKEf128=",
   "success": true,
-  "projectFilePath": "C:\\Users\\91870\\source\\repos\\HelloGreetingApplication\\ModelLayer\\ModelLayer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\HP\\OneDrive\\Desktop\\GreetingApp\\ModelLayer\\ModelLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
+  ],
   "logs": []
 }
