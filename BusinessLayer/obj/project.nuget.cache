@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "c79niZgETrg=",
+=======
+  "dgSpecHash": "G7XYq37PSSc=",
+>>>>>>> UC3
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\OneDrive\\Desktop\\GreetingApp\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [],

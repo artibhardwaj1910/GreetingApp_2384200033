@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "QBSl9rZ2Vbk=",
+=======
+  "dgSpecHash": "sPasVxJEPiQ=",
+>>>>>>> UC3
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\OneDrive\\Desktop\\GreetingApp\\HelloGreetingApplication\\HelloGreetingApplication.csproj",
   "expectedPackageFiles": [
