@@ -142,7 +142,7 @@
         },
         "runtime": {
           "BusinessLayer.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -150,7 +150,7 @@
       "ModelLayer/1.0.0": {
         "runtime": {
           "ModelLayer.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -158,7 +158,7 @@
       "RepositoryLayer/1.0.0": {
         "runtime": {
           "RepositoryLayer.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

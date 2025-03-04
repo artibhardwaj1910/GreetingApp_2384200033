@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interface;
+using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,16 @@ namespace BusinessLayer.Service
 {
     public class GreetingBL : IGreetingBL
     {
+        IGreetingRL _greetingRL;
+        public GreetingBL(IGreetingRL greetingRL)
+        {
+            _greetingRL = greetingRL;
+        }
+
         public string getGreetMessage()
         {
-            return "Hello World";
+            var result = _greetingRL.getGreetMessage();
+            return result;
         }
     }
 }

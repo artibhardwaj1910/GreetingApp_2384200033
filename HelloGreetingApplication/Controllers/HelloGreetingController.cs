@@ -30,11 +30,12 @@ namespace HelloGreetingApplication.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            var response = _greetingBL.getGreetMessage();
             ResponseModel<String> responseModel = new ResponseModel<string>();
 
             responseModel.Success = true;
             responseModel.Message = "API Endpoint Hit";
-            responseModel.Data = "Hello World";
+            responseModel.Data = response;
             _logger.Info("Get Method Executed");
             return Ok(responseModel);
         }
