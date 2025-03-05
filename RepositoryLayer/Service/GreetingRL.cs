@@ -39,6 +39,11 @@ namespace RepositoryLayer.Service
             var name = $"{userModel.FirstName} {userModel.LastName}".Trim();
             return string.IsNullOrEmpty(name) ? "Hello, World!" : $"Hello, {name}!";
         }
-        
+
+        public List<GreetingEntity> GetAllGreetings()
+        {
+            return _context.Greetings.ToList();
+        }
+
     }
 }
