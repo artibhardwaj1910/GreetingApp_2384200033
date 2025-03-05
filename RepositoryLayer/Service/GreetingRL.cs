@@ -61,5 +61,20 @@ namespace RepositoryLayer.Service
             return existingGreeting; // Successfully updated
         }
 
+        public bool DeleteGreeting(int id)
+        {
+            var existingGreeting = _context.Greetings.FirstOrDefault(x => x.Id == id);
+
+            if (existingGreeting == null)
+            {
+                return false;
+            }
+
+            _context.Greetings.Remove(existingGreeting);
+            _context.SaveChanges();
+
+            return true;
+        }
+
     }
 }

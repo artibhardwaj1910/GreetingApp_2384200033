@@ -136,6 +136,37 @@ namespace HelloGreetingApplication.Controllers
 
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteById(int id)
+        {
+            try
+            {
+                _logger.Info($"DELETE request received: Delete Greeting ID={id}");
+                ResponseModel<GreetingEntity> response = new ResponseModel<GreetingEntity?>();
+                var isDeleted = _greetingBL.DeleteGreeting(id);
+
+                if (!isDeleted)
+                {
+                    response.Success = false;
+                    response.Message = "Greeting not found!";
+                    response.Data = null;
+                    _logger.Info($"Greeting deletion failed: ID={id} not found.");
+                    return NotFound(response);
+                }
+
+                response.Success = true;
+                response.Message = "Greeting deleted successfully!";
+                response.Data = null;
+                _logger.Info($"Greeting with ID={id} deleted successfully.");
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error occurred while deleting the greeting.");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
         /// <summary>
         /// Get method to get the Greeting Message
         /// </summary>
