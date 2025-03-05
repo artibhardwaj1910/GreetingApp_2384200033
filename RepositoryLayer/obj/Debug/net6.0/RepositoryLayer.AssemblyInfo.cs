@@ -16,6 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c5c4ae6dd634c91b6d6b5c0313e8c48316d7e9a")]
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0671bd64145f75548c0c8b43688d526580ba8952")]
@@ -23,6 +24,9 @@ using System.Reflection;
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46e9790719903026fdd934f0f30a0c8fbd9f3941")]
 >>>>>>> UC7
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5beea8124ed4bff8a2cfedda4e018f8457debc38")]
+>>>>>>> UC8
 [assembly: System.Reflection.AssemblyProductAttribute("RepositoryLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RepositoryLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
