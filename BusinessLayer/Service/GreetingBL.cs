@@ -29,5 +29,11 @@ namespace BusinessLayer.Service
         {
             return _greetingRL.AddGreetings(greeting);
         }
+
+        //UC5
+        public GreetingEntity? GetGreetingById(int id)
+        {
+            return _greetingRL.GetGreetingById(id);
+        }
     }
 }

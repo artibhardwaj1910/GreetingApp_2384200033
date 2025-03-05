@@ -27,6 +27,13 @@ namespace RepositoryLayer.Service
             _context.SaveChanges();
             return greeting;
         }
+
+        //UC5
+
+        public GreetingEntity? GetGreetingById(int id)
+        {
+            return _context.Greetings.FirstOrDefault(x => x.Id == id);
+        }
         public string getGreetMessage(UsernameRequestModel userModel)
         {
             var name = $"{userModel.FirstName} {userModel.LastName}".Trim();
