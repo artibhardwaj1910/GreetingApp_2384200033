@@ -3,6 +3,8 @@ using BusinessLayer.Service;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
+using RepositoryLayer.Entity;
+using RepositoryLayer.Service;
 
 namespace HelloGreetingApplication.Controllers
 {
@@ -21,6 +23,32 @@ namespace HelloGreetingApplication.Controllers
         public HelloGreetingController(IGreetingBL greetingBL) // Use the interface
         {
             _greetingBL = greetingBL;
+        }
+
+        /// <summary>
+        /// Handles the creation of a new greeting message.
+        /// </summary>
+        /// <param name="requestModel">The request containing the greeting message.</param>
+        /// <returns>Returns a success response if the greeting is saved, or an error response if the input is invalid.</returns>
+        [HttpPost("UC4")]
+        public IActionResult SendGreeting(RequestModel requestModel)
+        {
+            ResponseModel<String> responseModel = new ResponseModel<string>();
+
+            if (requestModel == null || string.IsNullOrWhiteSpace(requestModel.Value))
+            {
+                return BadRequest(new { Success = false, Message = "Invalid input. Message cannot be empty." });
+            }
+
+            var greeting = new GreetingEntity { Message = requestModel.Value };
+            var savedGreeting = _greetingBL.AddGreeting(greeting);
+
+
+            responseModel.Success = true;
+            responseModel.Message = "Greeting saved successfully.";
+            responseModel.Data = savedGreeting.Message;
+            _logger.Info("SendGreeting Method Executed Successfully");
+            return Ok(responseModel);
         }
 
         /// <summary>
@@ -48,7 +76,7 @@ namespace HelloGreetingApplication.Controllers
         /// <param name="userModel">Greeting message from user</param>
         /// <returns>Confirmation response</returns>
         [HttpPost("greet")]
-        public IActionResult Post(UserModel userModel)
+        public IActionResult Post(UsernameRequestModel userModel)
         {
 
             var response = _greetingBL.getGreetMessage(userModel);

@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Interface;
 using ModelLayer.Model;
+using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
+using RepositoryLayer.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +19,15 @@ namespace BusinessLayer.Service
             _greetingRL = greetingRL;
         }
 
-        public string getGreetMessage(UserModel userModel)
+        public string getGreetMessage(UsernameRequestModel userModel)
         {
             var result = _greetingRL.getGreetMessage(userModel);
             return result;
+        }
+        //UC4
+        public GreetingEntity AddGreeting(GreetingEntity greeting)
+        {
+            return _greetingRL.AddGreetings(greeting);
         }
     }
 }
