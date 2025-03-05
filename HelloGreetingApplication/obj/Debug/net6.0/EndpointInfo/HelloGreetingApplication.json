@@ -59,6 +59,18 @@
         }
       }
     },
+    "/HelloGreeting/All": {
+      "get": {
+        "tags": [
+          "HelloGreeting"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/HelloGreeting": {
       "get": {
         "tags": [
