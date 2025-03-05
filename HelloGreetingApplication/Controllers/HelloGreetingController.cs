@@ -90,7 +90,7 @@ namespace HelloGreetingApplication.Controllers
         /// Retrieves a list of all greeting messages.
         /// </summary>
         /// <returns>A list of all stored greetings.</returns>
-        [HttpGet("All")]
+        [HttpGet("ListOfAll")]
         public IActionResult GetAllGreetings()
         {
             _logger.Info("GetAllGreetings method called.");
@@ -105,6 +105,35 @@ namespace HelloGreetingApplication.Controllers
 
             _logger.Info("All greetings retrieved successfully.");
             return Ok(new { Success = true, Data = greetings });
+        }
+
+        /// <summary>
+        /// Patch a greeting message 
+        /// </summary>
+        /// <returns> returns a updated greeting message</returns>
+
+        [HttpPatch("{id}")]
+        public IActionResult PatchGreeting(int id, RequestGreetingModel updatedGreeting)
+        {
+            _logger.Info($"UpdateGreeting method called with id: {id}");
+            try
+            {
+                var greeting = _greetingBL.UpdateGreeting(id, updatedGreeting.Message);
+                if (greeting == null)
+                {
+                    _logger.Info("Greeting update failed: ID not found.");
+                    return NotFound(new { Success = false, Message = "Greeting not found." });
+                }
+                _logger.Info("Greeting updated successfully.");
+                return Ok(new { Success = true, Data = greeting.Message });
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"An error occurred while fetching greeting for id: {id}. Error: {ex.Message}");
+                return StatusCode(500, new { Success = false, Message = "An unexpected error occurred." });
+            }
+
+
         }
 
         /// <summary>

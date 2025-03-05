@@ -45,5 +45,21 @@ namespace RepositoryLayer.Service
             return _context.Greetings.ToList();
         }
 
+        public GreetingEntity UpdateGreeting(int id, string newMssge)
+        {
+            var existingGreeting = _context.Greetings.FirstOrDefault(x => x.Id == id);
+
+            if (existingGreeting == null)
+            {
+                return existingGreeting; //  Greeting not found
+            }
+
+            existingGreeting.Message = newMssge; // Update message
+            _context.Greetings.Update(existingGreeting);
+            _context.SaveChanges(); // Save changes to DB
+
+            return existingGreeting; // Successfully updated
+        }
+
     }
 }
